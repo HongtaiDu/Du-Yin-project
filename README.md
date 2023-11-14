@@ -1,1 +1,2 @@
-# Du-Yin-project
+# Leetcode Bootcamp Project
+NYC Restaurant Health Dashboard
