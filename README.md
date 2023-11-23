@@ -13,8 +13,8 @@ NYC Restaurant Health Dashboard
     2. export FLASK_ENV=development
     3. flask run
 * next
-    4. open a broswer
-    5. copy http://127.0.0.1:5000/ to the broswer
+    1. open a broswer
+    2. copy http://127.0.0.1:5000/ to the broswer
 
 * Note:
     1. Must have python installed
