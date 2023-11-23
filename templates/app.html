@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div>
+        {% for onedata in data %}
+            <span>{{ onedata['street'] }}</span>
+            <p>{{ onedata['zipcode'] }}</p>
+        {% endfor %}
+    </div>
+{% endblock content %}
