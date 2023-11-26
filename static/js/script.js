@@ -1,15 +1,13 @@
-// const mockData = [];
-const mockData = [
-    { name: "Restaurant A", rating: "A" },
-    { name: "Restaurant B", rating: "B" },
-];
-// fetch('http://localhost:5000/api/restaurants')
-//     .then(response => response.json())
-//     .then(data => {
-//         mockData = data; // Store the data in mockData
-//         console.log(mockData); // Now mockData contains your array of restaurants
-//         // You can now use mockData elsewhere in your script, but only after this point
-//     });
+
+
+/*
+Method to get restaurant data from Flask
+It is used in the html file
+to fill mockData variable
+*/
+function getData(vars) {
+    return vars
+}
 
 function searchRestaurants() {
     let searchTerm = document.getElementById('searchInput').value.toLowerCase();
@@ -26,19 +24,3 @@ function displayResults(data) {
         resultsDiv.innerHTML += `<p>${restaurant.name} - Rating: ${restaurant.rating}</p>`;
     });
 }
-
-
-
-// Remember: At this point, mockData will still be empty because fetch hasn't completed yet
-
-
-// async function fetchData() {
-//     const response = await fetch('http://127.0.0.1:5000/api/restaurants');
-//     const data = await response.json();
-//     mockData = data;
-//     console.log(mockData);
-//     // Perform operations with mockData here or call other functions that need mockData
-// }
-
-// fetchData();
-

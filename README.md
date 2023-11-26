@@ -5,7 +5,7 @@ NYC Restaurant Health Dashboard
 * Author: Hongtai Du, Tony Yin
 * Email: hd2609@nyu.edu,
 * Project start date: 01/11/2023
-* The purpose of this project is to get top 50 the heathiest and the most clean restaurants in NYC by the data from Department of Health and Mental Hygiene (DOHMH).
+* The purpose of this project is to get top 50 the heathiest and the most clean restaurants in NYC by the data from Department of Health and Mental Hygiene (DOHMH). The list does not contain the restaurants without scores or names
 
 # Project running instruction
 * command line

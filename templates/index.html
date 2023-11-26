@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>NYC Restaurant Health Ratings</title>
     <link rel="stylesheet" href="/static/css/global.css" />
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </head>
 
 <body>
@@ -22,7 +23,14 @@
     {% block content %}
 
     {% endblock content %}
+
+    
+    <!-- get data from app.py in javascript file -->
+    <!-- getData() works only in html file since js does not have access to Flask data -->
+    <script type="text/javascript" {{ url_for('static', filename='/static/js/script.js')}}></script>
+        <script type="text/javascript">
+            mockData = getData({{data|tojson}})
+    </script>
 </body>
-<script src="/static/js/script.js"></script>
 
 </html>
