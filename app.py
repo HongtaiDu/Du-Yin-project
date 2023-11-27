@@ -5,32 +5,43 @@ from io import StringIO
 
 app = Flask(__name__)
 
+# Check each field individually to replace empty part with 'N/A'
+def replace_empty_fields(row):
+    # Replace empty fields with 'N/A'
+    if row['boro'] == '':
+        row['boro'] = 'N/A'
+    if row['street'] == '':
+        row['street'] = 'N/A'
+    if row['zipcode'] == '':
+        row['zipcode'] = 'N/A'
+    if row['phone'] == '':
+        row['phone'] = 'N/A'
+    if row['cuisine_description'] == '':
+        row['cuisine_description'] = 'N/A'
+    return row
+
+# get data from website
 def getRestaurantData(csvContent):
     data = []
+    seen = set()  # Set to keep track of unique restaurant entries
     for row in csvContent:
         if row['dba'] != '' and row['score'] != '':
-            # Check each field individually to replace empty part with 'N/A'
-            if row['boro'] == '':
-                row['boro'] = 'N/A'
-            if row['street'] == '':
-                row['street'] = 'N/A'
-            if row['zipcode'] == '':
-                row['zipcode'] = 'N/A'
-            if row['phone'] == '':
-                row['phone'] = 'N/A'
-            if row['cuisine_description'] == '':
-                row['cuisine_description'] = 'N/A'
-
-            restaurant_data = {
-                "name": row['dba'], 
-                "rating": row['score'],
-                "county": row['boro'],
-                "street": row['street'],
-                "zipcode": row['zipcode'],
-                "phone": row['phone'],
-                "cuisine": row['cuisine_description']
-            }
-            data.append(restaurant_data)
+            # Check if there is duplicates in database. If there is, skip it 
+            identifier = (row['dba'], row['boro'], row['street'], row['zipcode'])
+            if identifier not in seen:
+                seen.add(identifier) 
+                # Call function to replace empty fields
+                row = replace_empty_fields(row)
+                restaurant_data = {
+                    "name": row['dba'], 
+                    "rating": row['score'],
+                    "county": row['boro'],
+                    "street": row['street'],
+                    "zipcode": row['zipcode'],
+                    "phone": row['phone'],
+                    "cuisine": row['cuisine_description']
+                }
+                data.append(restaurant_data)
     return data
 
 # bubble sort to sort the list of restaurant
