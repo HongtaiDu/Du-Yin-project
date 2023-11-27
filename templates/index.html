@@ -19,12 +19,7 @@
 
     <div id="results">
     </div>
-    <!-- the restaurtants' info from python app will be put here -->
-    {% block content %}
 
-    {% endblock content %}
-
-    
     <!-- get data from app.py in javascript file -->
     <!-- getData() works only in html file since js does not have access to Flask data -->
     <script type="text/javascript" {{ url_for('static', filename='/static/js/script.js')}}></script>

@@ -9,6 +9,18 @@ def getRestaurantData(csvContent):
     data = []
     for row in csvContent:
         if row['dba'] != '' and row['score'] != '':
+            # Check each field individually to replace empty part with 'N/A'
+            if row['boro'] == '':
+                row['boro'] = 'N/A'
+            if row['street'] == '':
+                row['street'] = 'N/A'
+            if row['zipcode'] == '':
+                row['zipcode'] = 'N/A'
+            if row['phone'] == '':
+                row['phone'] = 'N/A'
+            if row['cuisine_description'] == '':
+                row['cuisine_description'] = 'N/A'
+
             restaurant_data = {
                 "name": row['dba'], 
                 "rating": row['score'],
@@ -31,7 +43,8 @@ def bubble_sort(data):
             # Compare the "rating" of the current restaurant with the next restaurant
             rating1 = int(data[j]['rating'])
             rating2 = int(data[j + 1]['rating'])
-            if rating1 < rating2:  # Change the comparison operator to sort in descending order
+            # Change the comparison operator to sort in descending order
+            if rating1 < rating2:  
                 # Swap the restaurants if they are in the wrong order
                 data[j], data[j + 1] = data[j + 1], data[j]
                 swapped = True
@@ -60,4 +73,4 @@ def hello_world():
     data = getRestaurantData(csv_reader)
     sortedData = bubble_sort(data)
     highRated = selectRestaurants(sortedData)
-    return render_template('index.html', data=data)
+    return render_template('index.html', data=highRated)

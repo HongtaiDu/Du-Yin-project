@@ -21,6 +21,10 @@ function displayResults(data) {
     let resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
     data.forEach(restaurant => {
-        resultsDiv.innerHTML += `<p>${restaurant.name} - Rating: ${restaurant.rating}</p>`;
+        resultsDiv.innerHTML += `<p>${restaurant.name} - 
+        Rating: ${restaurant.rating}, County: ${restaurant.county}, 
+        Street: ${restaurant.rating}, Zipcode: ${restaurant.zipcode}, 
+        Phone: ${restaurant.phone}, Cuisine: ${restaurant.cuisine}</p>`;
     });
 }
+
