@@ -144,3 +144,16 @@ em {
 	font-style: normal;
 	color: red;
 }
+
+.flex-container {
+    display: flex;
+    align-items: stretch;
+}
+
+#searchEngine {
+    flex: 2;
+}
+
+#rank {
+    flex: 1;
+}

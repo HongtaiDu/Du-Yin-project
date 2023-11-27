@@ -11,14 +11,19 @@
 <body>
     <header class="navbar-brand"></header>
 
-    <div class="main">
-        <h1>NYC Restaurant Health Ratings</h1>
-        <input type="text" id="searchInput" placeholder="Search for a restaurant...">
-        <button onclick="searchRestaurants()">Search</button>
-    </div>
+        <div class="flex-container">
+            <div id="searchEngine">
+                <h1>NYC Restaurant Health Ratings</h1>
+                <input type="text" id="searchInput" placeholder="Search for a restaurant...">
+                <button onclick="searchRestaurants()">Search</button>
+            </div>
+            <div id="rank"></div>
+        </div>
 
-    <div id="results">
+    <div class="content-container">
+        <div id="results"></div>
     </div>
+    
 
     <!-- get data from app.py in javascript file -->
     <!-- getData() works only in html file since js does not have access to Flask data -->
