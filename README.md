@@ -17,7 +17,8 @@ NYC Restaurant Health Ratings
     1. open a broswer
     2. copy http://127.0.0.1:5000/ to the broswer
     3. To turn off this project, press control + C on your keyboard.
-
+    
+# Some notes here
 * Note:
     1. Must have python installed
     2. Must have flask, requests, csv libary installed
