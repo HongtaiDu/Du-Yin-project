@@ -24,5 +24,11 @@ NYC Restaurant Health Ratings
     3. If you are using VScode, make sure that your version of python interpreter in VScode is the same as the version of pip
         1. To check this, use command line "pip --version"
 
+* Limitation:
+    1. Lack of authentication
+    2. Not using the bubble_sort function provided by python
+    3. Must check data fetched from the website to make sure security
+    4. Might have database locally to improve performance
+
 # Data Source
     * https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j
